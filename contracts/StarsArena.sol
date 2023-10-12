@@ -119,8 +119,8 @@ contract StarsArena is OwnableUpgradeable, ReentrancyGuardUpgradeable {
         }
         uint256 sum1 = (adjustedSupply - 1) * (adjustedSupply) * (2 * (adjustedSupply - 1) + 1) / 6;
         uint256 sum2 = (adjustedSupply - 1 + amount) * (adjustedSupply + amount) * (2 * (adjustedSupply - 1 + amount) + 1) / 6;
-        uint256 summation = DEFAULT_WEIGHT_A * (sum2 - sum1) / 1 ether + DEFAULT_WEIGHT_D;
-        uint256 price = DEFAULT_WEIGHT_B * summation * initialPrice / 1 ether;
+        uint256 summation = DEFAULT_WEIGHT_A * (sum2 - sum1);
+        uint256 price = DEFAULT_WEIGHT_B * summation * initialPrice / 1 ether / 1 ether;
         if (price < initialPrice) {
             return initialPrice;
         }

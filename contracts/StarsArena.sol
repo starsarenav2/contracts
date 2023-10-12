@@ -255,10 +255,11 @@ contract StarsArena is OwnableUpgradeable, ReentrancyGuardUpgradeable {
         address referrer = userToReferrer[sender];
         if (referrer != address(0) && referrer != sender) {
             (bool success,) = referrer.call{value: referralFee}("");
-            require(success, "Unable to send funds");
+            if (!success) {
+                sendToProtocol(referralFee);
+            }
         } else {
-            (bool success2,) = protocolFeeDestination.call{value: referralFee}("");
-            require(success2, "Unable to send funds");
+            sendToProtocol(referralFee);
         }
     }
 }

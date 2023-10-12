@@ -5,20 +5,20 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/proxy/beacon/UpgradeableBeacon.sol";
 
-
-contract StarShares is OwnableUpgradeable, ReentrancyGuardUpgradeable {
+contract StarsArenaOld is OwnableUpgradeable, ReentrancyGuardUpgradeable {
 
     function initialize() public initializer
     {
-        __Ownable_init();
-        __ReentrancyGuard_init();
         protocolFeeDestination = address(0xB7461CF331a3A940e69b9DeeA98fA43fD357f571);
         subjectFeePercent = 7 ether / 100;
         protocolFeePercent = 2 ether / 100;
         referralFeePercent = 1 ether / 100;
         initialPrice = 1 ether / 250;
         subscriptionDuration = 30 days;
+        __Ownable_init();
+        __ReentrancyGuard_init();
     }
 
     uint256 public subscriptionDuration;
@@ -68,6 +68,7 @@ contract StarShares is OwnableUpgradeable, ReentrancyGuardUpgradeable {
     mapping(address => uint256) public pendingWithdrawals;
     mapping(address => mapping(address => uint256)) public pendingTokenWithdrawals;
 
+    receive() external payable {}
 
     function subscribeERC20(address _subject, uint256 _tokenAmount) external {
         address tokenAddress = subscriptionTokenAddress[_subject];
@@ -296,6 +297,12 @@ contract StarShares is OwnableUpgradeable, ReentrancyGuardUpgradeable {
     }
 
     function getSellPrice(address sharesSubject, uint256 amount) public view returns (uint256) {
+        if (sharesSupply[sharesSubject] == 0) {
+            return 0;
+        }
+        if (amount == 0) {
+            return 0;
+        }
         if (sharesSupply[sharesSubject] < amount) {
             return 0;
         }
@@ -365,6 +372,8 @@ contract StarShares is OwnableUpgradeable, ReentrancyGuardUpgradeable {
 
 
     function sellShares(address sharesSubject, uint256 amount) public payable {
+        require(amount > 0, "Amount must be greater than 0");
+
         uint256 supply = sharesSupply[sharesSubject];
         uint256 price = getPrice(sharesSubject, supply - amount, amount);
         uint256 protocolFee = price * protocolFeePercent / 1 ether;

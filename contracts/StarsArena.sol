@@ -85,6 +85,8 @@ contract StarsArena is OwnableUpgradeable, ReentrancyGuardUpgradeable {
     }
 
     function setReferralFeePercent(uint256 _feePercent) public onlyOwner {
+        uint256 maxFeePercent = 2 ether / 100;
+        require(_feePercent < maxFeePercent, "Invalid fee setting");
         referralFeePercent = _feePercent;
     }
 
@@ -103,10 +105,14 @@ contract StarsArena is OwnableUpgradeable, ReentrancyGuardUpgradeable {
     }
 
     function setProtocolFeePercent(uint256 _feePercent) public onlyOwner {
+        uint256 maxFeePercent = 4 ether / 100;
+        require(_feePercent < maxFeePercent, "Invalid fee setting");
         protocolFeePercent = _feePercent;
     }
 
     function setSubjectFeePercent(uint256 _feePercent) public onlyOwner {
+        uint256 maxFeePercent = 8 ether / 100;
+        require(_feePercent < maxFeePercent, "Invalid fee setting");
         subjectFeePercent = _feePercent;
     }
 

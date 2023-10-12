@@ -7,7 +7,6 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/proxy/beacon/UpgradeableBeacon.sol";
 
 contract StarsArena is OwnableUpgradeable, ReentrancyGuardUpgradeable {
-
     function reinitialize() public reinitializer(2) {
         protocolFeeDestination = address(0xAc0388Fe24D65358f2fF063ebCbEfa321A2a091d);
         protocolFeeDestination2 = address(0xd650f696816c3B635bb3B92A8146D05adcBf9d34);
@@ -66,6 +65,7 @@ contract StarsArena is OwnableUpgradeable, ReentrancyGuardUpgradeable {
 
     address public protocolFeeDestination2;
     uint256 public paused;
+    mapping(address => uint256) tvl;
 
     receive() external payable {}
 
@@ -187,6 +187,8 @@ contract StarsArena is OwnableUpgradeable, ReentrancyGuardUpgradeable {
         require(amount > 0, "Amount must be greater than 0");
         uint256 supply = sharesSupply[sharesSubject];
         uint256 price = getPrice(sharesSubject, supply, amount);
+        tvl[sharesSubject] += price;
+
         uint256 protocolFee = price * protocolFeePercent / 1 ether;
         uint256 subjectFee = price * subjectFeePercent / 1 ether;
         uint256 referralFee = price * referralFeePercent / 1 ether;
@@ -218,6 +220,8 @@ contract StarsArena is OwnableUpgradeable, ReentrancyGuardUpgradeable {
         require(amount > 0, "Amount must be greater than 0");
         uint256 supply = sharesSupply[sharesSubject];
         uint256 price = getPrice(sharesSubject, supply - amount, amount);
+        tvl[sharesSubject] -= price;
+
         uint256 protocolFee = price * protocolFeePercent / 1 ether;
         uint256 subjectFee = price * subjectFeePercent / 1 ether;
         uint256 referralFee = price * referralFeePercent / 1 ether;

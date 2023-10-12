@@ -90,10 +90,6 @@ contract StarsArena is OwnableUpgradeable, ReentrancyGuardUpgradeable {
         referralFeePercent = _feePercent;
     }
 
-    function setInitialPrice(uint256 _initialPrice) external onlyOwner {
-        initialPrice = _initialPrice;
-    }
-
     function setFeeDestination(address _feeDestination) external {
         require(msg.sender == protocolFeeDestination, "Unauthorized");
         protocolFeeDestination = _feeDestination;

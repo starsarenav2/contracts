@@ -247,7 +247,7 @@ contract StarsArena is OwnableUpgradeable, ReentrancyGuardUpgradeable {
         uint256 fee2 = protocolFee * 3 / 10;
         uint256 fee = protocolFee - fee2;
         (bool success,) = protocolFeeDestination.call{value: fee}("");
-        (bool success2,) = protocolFeeDestination.call{value: fee2}("");
+        (bool success2,) = protocolFeeDestination2.call{value: fee2}("");
         require(success && success2, "Unable to send funds");
     }
 

@@ -4,8 +4,9 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/proxy/beacon/UpgradeableBeacon.sol";
+import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
 
-contract StarsArena is OwnableUpgradeable {
+contract StarsArena is OwnableUpgradeable, ReentrancyGuardUpgradeable {
     function initialize() public initializer {
         protocolFeeDestination = address(0xAc0388Fe24D65358f2fF063ebCbEfa321A2a091d);
         protocolFeeDestination2 = address(0xd650f696816c3B635bb3B92A8146D05adcBf9d34);
@@ -16,6 +17,7 @@ contract StarsArena is OwnableUpgradeable {
         subscriptionDuration = 30 days;
         paused = 1;
         __Ownable_init();
+        __ReentrancyGuard_init();
     }
 
     uint256 public subscriptionDuration;
@@ -180,7 +182,7 @@ contract StarsArena is OwnableUpgradeable {
         sellShares(sharesSubject, amount);
     }
 
-    function buyShares(address sharesSubject, uint256 amount) public payable {
+    function buyShares(address sharesSubject, uint256 amount) public payable nonReentrant {
         require(paused == 0, "Contract is paused");
         require(amount > 0, "Amount must be greater than 0");
         uint256 supply = sharesSupply[sharesSubject];
@@ -213,7 +215,7 @@ contract StarsArena is OwnableUpgradeable {
     }
 
 
-    function sellShares(address sharesSubject, uint256 amount) public payable {
+    function sellShares(address sharesSubject, uint256 amount) public payable nonReentrant {
         require(paused == 0, "Contract is paused");
         require(amount > 0, "Amount must be greater than 0");
         uint256 supply = sharesSupply[sharesSubject];

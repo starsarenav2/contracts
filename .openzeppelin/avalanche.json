@@ -1,0 +1,669 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0x5ED18CD7cE7054dcCF6c3af1Bb1fB828A00FBF3e",
+    "txHash": "0x4875443195a7baca58666458886bc144af98b47b28632485fe69e9d293fe1598"
+  },
+  "proxies": [
+    {
+      "address": "0x6d41b457336D516C184281619bfF21698359E9b0",
+      "txHash": "0xca5a41b082f2275c83ebbf78eacdc73d7f103f0631e6b02a14b9f2ae11a97103",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x563395A2a04a7aE0421d34d62ae67623cAF67D03",
+      "txHash": "0xde45003d6624e53695fa26e2d6afef780567a32248d7bf46ba0383237a7d2ab3",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "09679b53d0b1e0145bc103d6fc0b3fec1cd30a35b2075f4e39564eb410433062": {
+      "address": "0x9C8574779468125975F370b7746fb2aF7CB13fdb",
+      "txHash": "0xc9ea83de5c6dc729a9ddbc5b70b4bc43045d7ca3e4f95fd06b2e79ff1f0564a0",
+      "layout": {
+        "solcVersion": "0.8.7",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:63",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:68"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "_status",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_uint256",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol:38"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol:88"
+          },
+          {
+            "label": "subscriptionDuration",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_uint256",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:23"
+          },
+          {
+            "label": "protocolFeeDestination",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_address",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:24"
+          },
+          {
+            "label": "protocolFeePercent",
+            "offset": 0,
+            "slot": "153",
+            "type": "t_uint256",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:25"
+          },
+          {
+            "label": "subjectFeePercent",
+            "offset": 0,
+            "slot": "154",
+            "type": "t_uint256",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:26"
+          },
+          {
+            "label": "referralFeePercent",
+            "offset": 0,
+            "slot": "155",
+            "type": "t_uint256",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:27"
+          },
+          {
+            "label": "initialPrice",
+            "offset": 0,
+            "slot": "156",
+            "type": "t_uint256",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:28"
+          },
+          {
+            "label": "weightA",
+            "offset": 0,
+            "slot": "157",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:30"
+          },
+          {
+            "label": "weightB",
+            "offset": 0,
+            "slot": "158",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:31"
+          },
+          {
+            "label": "weightC",
+            "offset": 0,
+            "slot": "159",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:32"
+          },
+          {
+            "label": "weightD",
+            "offset": 0,
+            "slot": "160",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:33"
+          },
+          {
+            "label": "weightsInitialized",
+            "offset": 0,
+            "slot": "161",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:34"
+          },
+          {
+            "label": "userToReferrer",
+            "offset": 0,
+            "slot": "162",
+            "type": "t_mapping(t_address,t_address)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:41"
+          },
+          {
+            "label": "revenueShare",
+            "offset": 0,
+            "slot": "163",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:46"
+          },
+          {
+            "label": "subscriptionPrice",
+            "offset": 0,
+            "slot": "164",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:47"
+          },
+          {
+            "label": "subscriptionsEnabled",
+            "offset": 0,
+            "slot": "165",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:48"
+          },
+          {
+            "label": "subscribers",
+            "offset": 0,
+            "slot": "166",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:51"
+          },
+          {
+            "label": "shareholders",
+            "offset": 0,
+            "slot": "167",
+            "type": "t_mapping(t_address,t_array(t_address)dyn_storage)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:53"
+          },
+          {
+            "label": "sharesBalance",
+            "offset": 0,
+            "slot": "168",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:56"
+          },
+          {
+            "label": "sharesSupply",
+            "offset": 0,
+            "slot": "169",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:59"
+          },
+          {
+            "label": "subscriptionTokenAddress",
+            "offset": 0,
+            "slot": "170",
+            "type": "t_mapping(t_address,t_address)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:61"
+          },
+          {
+            "label": "allowedTokens",
+            "offset": 0,
+            "slot": "171",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:62"
+          },
+          {
+            "label": "pendingWithdrawals",
+            "offset": 0,
+            "slot": "172",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:63"
+          },
+          {
+            "label": "pendingTokenWithdrawals",
+            "offset": 0,
+            "slot": "173",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:64"
+          },
+          {
+            "label": "protocolFeeDestination2",
+            "offset": 0,
+            "slot": "174",
+            "type": "t_address",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:66"
+          },
+          {
+            "label": "paused",
+            "offset": 0,
+            "slot": "175",
+            "type": "t_uint256",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:67"
+          },
+          {
+            "label": "tvl",
+            "offset": 0,
+            "slot": "176",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:68"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_array(t_address)dyn_storage)": {
+            "label": "mapping(address => address[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "77e6b13c811e5a384dd05edba70cd7b6683022be09b0c91835e548e8ba0aa5ca": {
+      "address": "0x4ece0C063c45bc2b461323D11593b6c666F05135",
+      "txHash": "0x847d56f043041d2f5956290da969189843f0d4169ca21b9ce1d569ca828007aa",
+      "layout": {
+        "solcVersion": "0.8.7",
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:63",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:68"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:94"
+          },
+          {
+            "label": "_status",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_uint256",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol:38"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol:88"
+          },
+          {
+            "label": "subscriptionDuration",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_uint256",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:23"
+          },
+          {
+            "label": "protocolFeeDestination",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_address",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:24"
+          },
+          {
+            "label": "protocolFeePercent",
+            "offset": 0,
+            "slot": "153",
+            "type": "t_uint256",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:25"
+          },
+          {
+            "label": "subjectFeePercent",
+            "offset": 0,
+            "slot": "154",
+            "type": "t_uint256",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:26"
+          },
+          {
+            "label": "referralFeePercent",
+            "offset": 0,
+            "slot": "155",
+            "type": "t_uint256",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:27"
+          },
+          {
+            "label": "initialPrice",
+            "offset": 0,
+            "slot": "156",
+            "type": "t_uint256",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:28"
+          },
+          {
+            "label": "weightA",
+            "offset": 0,
+            "slot": "157",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:30"
+          },
+          {
+            "label": "weightB",
+            "offset": 0,
+            "slot": "158",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:31"
+          },
+          {
+            "label": "weightC",
+            "offset": 0,
+            "slot": "159",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:32"
+          },
+          {
+            "label": "weightD",
+            "offset": 0,
+            "slot": "160",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:33"
+          },
+          {
+            "label": "weightsInitialized",
+            "offset": 0,
+            "slot": "161",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:34"
+          },
+          {
+            "label": "userToReferrer",
+            "offset": 0,
+            "slot": "162",
+            "type": "t_mapping(t_address,t_address)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:41"
+          },
+          {
+            "label": "revenueShare",
+            "offset": 0,
+            "slot": "163",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:46"
+          },
+          {
+            "label": "subscriptionPrice",
+            "offset": 0,
+            "slot": "164",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:47"
+          },
+          {
+            "label": "subscriptionsEnabled",
+            "offset": 0,
+            "slot": "165",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:48"
+          },
+          {
+            "label": "subscribers",
+            "offset": 0,
+            "slot": "166",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:51"
+          },
+          {
+            "label": "shareholders",
+            "offset": 0,
+            "slot": "167",
+            "type": "t_mapping(t_address,t_array(t_address)dyn_storage)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:53"
+          },
+          {
+            "label": "sharesBalance",
+            "offset": 0,
+            "slot": "168",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:56"
+          },
+          {
+            "label": "sharesSupply",
+            "offset": 0,
+            "slot": "169",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:59"
+          },
+          {
+            "label": "subscriptionTokenAddress",
+            "offset": 0,
+            "slot": "170",
+            "type": "t_mapping(t_address,t_address)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:61"
+          },
+          {
+            "label": "allowedTokens",
+            "offset": 0,
+            "slot": "171",
+            "type": "t_mapping(t_address,t_bool)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:62"
+          },
+          {
+            "label": "pendingWithdrawals",
+            "offset": 0,
+            "slot": "172",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:63"
+          },
+          {
+            "label": "pendingTokenWithdrawals",
+            "offset": 0,
+            "slot": "173",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:64"
+          },
+          {
+            "label": "protocolFeeDestination2",
+            "offset": 0,
+            "slot": "174",
+            "type": "t_address",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:66"
+          },
+          {
+            "label": "paused",
+            "offset": 0,
+            "slot": "175",
+            "type": "t_uint256",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:67"
+          },
+          {
+            "label": "tvl",
+            "offset": 0,
+            "slot": "176",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "StarsArena",
+            "src": "contracts/StarsArena.sol:68"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_address)dyn_storage": {
+            "label": "address[]",
+            "numberOfBytes": "32"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_address)": {
+            "label": "mapping(address => address)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_array(t_address)dyn_storage)": {
+            "label": "mapping(address => address[])",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_bool)": {
+            "label": "mapping(address => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,22 +1,18 @@
-const {ethers, upgrades, network} = require('hardhat');
+const {ethers, upgrades, run} = require('hardhat');
 
 async function main() {
-    let existingAddress;
-
-    if (network.name === 'fuji') {
-        existingAddress = '';
-    } else if (network.name === 'mainnet') {
-        existingAddress = '0xA481B139a1A654cA19d2074F174f17D7534e8CeC';
-    }
-
-    const [deployer] = await ethers.getSigners();
-    const deployerAddress = await deployer.getAddress();
-    console.log('Deploying StarShares with address:', deployerAddress, network.name);
-
-    const StarsArena = await ethers.getContractFactory('StarsArena');
-    const starsArena = await upgrades.upgradeProxy(existingAddress, StarsArena);
-
-    console.log('StarShares upgraded to:', starsArena.address);
+  const proxyAddress = '0x563395A2a04a7aE0421d34d62ae67623cAF67D03';
+  const gas = await ethers.provider.getGasPrice();
+  const StarsArena = await ethers.getContractFactory('StarsArena');
+  console.log("Upgrading StarsArena...");
+  const starsArena = await upgrades.upgradeProxy(proxyAddress, StarsArena, {
+    gasPrice: gas,
+  });
+  console.log('StarShares upgraded to:', starsArena.address);
+  await run(`verify:verify`, {
+    address: starsArena.address,
+    constructorArguments: [],
+  });
 }
 
 main()

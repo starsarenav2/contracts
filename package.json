@@ -6,11 +6,8 @@
   "scripts": {
     "compile": "npx hardhat compile",
     "test": "hardhat test",
-    "deploy_testnet_1_0_starsarena": "npx hardhat run scripts/1_0_deploy_starsarena.js --network fuji",
-    "upgrade_testnet_1_1_starsarena": "npx hardhat run scripts/1_1_upgrade_starsarena.js --network fuji",
-    "deploy_mainnet_1_0_starsarena": "npx hardhat run scripts/1_0_deploy_starsarena.js --network mainnet",
-    "upgrade_mainnet_1_1_starsarena": "npx hardhat run scripts/1_1_upgrade_starsarena.js --network mainnet",
-    "upgrade_test_2": "npx hardhat run scripts/1_2_upgrade_friends.js --network mainnet"
+    "deploy_mainnet_1_0_starsarena": "npx hardhat run scripts/1_0_deploy_starsarena.js --network avalanche",
+    "upgrade_mainnet_1_1_starsarena": "npx hardhat run scripts/1_1_upgrade_starsarena.js --network avalanche"
   },
   "keywords": [],
   "author": "",
